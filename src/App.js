@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         return(
             <div>
-                <ButtonList/>
+                <ButtonList characters={this.state.characters}/>
             </div>
         )
     }
