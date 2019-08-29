@@ -8,17 +8,17 @@ class App extends Component {
         characters : [
             {
                 name: 'Darth Vader',
-                image: 'https://library.kissclipart.com/20181002/iiq/kissclipart-lego-star-wars-minifigure-darth-vader-white-hea-3bfcd40448cc3e27.jpg',
+                image: 'https://www.filmandtvnow.com/wp-content/uploads/2014/09/Vader_Minifig.png',
                 selected: false
             },
             {
                 name: 'Kylo Ren',
-                image: 'https://library.kissclipart.com/20180902/xgw/kissclipart-kylo-ren-lego-png-clipart-lego-star-wars-the-forc-e8a2dd08e5ceb638.jpg',
+                image: 'https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/30bafd0a662e4ce3bdf27cff7e0bf3c1_Large.png',
                 selected: false
             },
             {
                 name: 'Yoda',
-                image: 'https://i.pinimg.com/originals/ba/e6/44/bae644068634f242cc406c4a0c30864d.png',
+                image: 'http://is4.mzstatic.com/image/thumb/Purple/v4/11/ef/22/11ef22e9-aa4c-3fef-5a01-76ee5556ac0c/source/512x512bb.png',
                 selected: false
             },
             {
@@ -28,17 +28,21 @@ class App extends Component {
             }
 
         ]
-    }
+    };
 
     onClickHandle = (index) => _ => {
-        console.log(index)
+        this.setState({
+            characters: this.state.characters.map( (char, charIndex) =>
+                ( ( charIndex === index) ? ({...char, selected: true}) : ({...char, selected: false}) )
+            )
+        })
     };
 
     render() {
         return(
             <div>
                 <ButtonList onClickFunc={this.onClickHandle} characters={this.state.characters}/>
-                <Character/>
+                <Character selectedChar={ this.state.characters.find(char => char.selected) } />
             </div>
         )
     }

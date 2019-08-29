@@ -8,6 +8,13 @@ state = {
     image: null
 };
 
+componentWillReceiveProps(nextProps) {
+    this.setState({
+        name: nextProps.selectedChar.name,
+        image: nextProps.selectedChar.image
+    })
+}
+
     render() {
         return(
             <div>
