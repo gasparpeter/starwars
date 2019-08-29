@@ -8,28 +8,36 @@ class App extends Component {
         characters : [
             {
                 name: 'Darth Vader',
-                image: 'https://library.kissclipart.com/20181002/iiq/kissclipart-lego-star-wars-minifigure-darth-vader-white-hea-3bfcd40448cc3e27.jpg'
+                image: 'https://library.kissclipart.com/20181002/iiq/kissclipart-lego-star-wars-minifigure-darth-vader-white-hea-3bfcd40448cc3e27.jpg',
+                selected: false
             },
             {
                 name: 'Kylo Ren',
-                image: 'https://library.kissclipart.com/20180902/xgw/kissclipart-kylo-ren-lego-png-clipart-lego-star-wars-the-forc-e8a2dd08e5ceb638.jpg'
+                image: 'https://library.kissclipart.com/20180902/xgw/kissclipart-kylo-ren-lego-png-clipart-lego-star-wars-the-forc-e8a2dd08e5ceb638.jpg',
+                selected: false
             },
             {
                 name: 'Yoda',
-                image: 'https://i.pinimg.com/originals/ba/e6/44/bae644068634f242cc406c4a0c30864d.png'
+                image: 'https://i.pinimg.com/originals/ba/e6/44/bae644068634f242cc406c4a0c30864d.png',
+                selected: false
             },
             {
                 name: 'Rey',
-                image: 'https://psmedia.playstation.com/is/image/psmedia/lego-star-wars-tfa-two-column-01-ps4-eu-02feb16?$TwoColumn_Image$'
+                image: 'https://psmedia.playstation.com/is/image/psmedia/lego-star-wars-tfa-two-column-01-ps4-eu-02feb16?$TwoColumn_Image$',
+                selected: false
             }
 
         ]
     }
 
+    onClickHandle = (index) => _ => {
+        console.log(index)
+    };
+
     render() {
         return(
             <div>
-                <ButtonList characters={this.state.characters}/>
+                <ButtonList onClickFunc={this.onClickHandle} characters={this.state.characters}/>
                 <Character/>
             </div>
         )

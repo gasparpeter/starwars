@@ -4,8 +4,8 @@ import React, {Component} from 'react';
 class Character extends Component {
 
 state = {
-    name: 'Peti',
-    image: 'https://jaki-jezyk-programowania.pl/img/javascript.png'
+    name: null,
+    image: null
 };
 
     render() {
