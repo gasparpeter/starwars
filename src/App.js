@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ButtonList from "./ButtonList";
+import Character from './Character';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
         return(
             <div>
                 <ButtonList characters={this.state.characters}/>
+                <Character/>
             </div>
         )
     }
